@@ -30,6 +30,10 @@ env:
     HZERO_START_INIT_OPEN_LOGIN_WAY: false
     # 是否初始化用户到缓存
     HZERO_START_INIT_USER: false
+    # 是否初始化缓存LDAP
+    HZERO_START_INIT_LDAP: false
+    # 是否初始化缓存客户端
+    HZERO_START_INIT_CLIENT: false
     # 初始化导入表，第一次启动服务的时候需开启此设置
     HZERO_IMPORT_INIT-TABLE: false
     # 测试时禁用验证码功能
@@ -37,13 +41,13 @@ env:
     # 数据库所有者模式，例如 SqlServer 下的 dbo/guest
     HZERO_DB_OWNER:
     # 清除过期权限
-    CHOERODON_CLEAN_PERMISSION: true
+    HZERO_PERMISSION_CLEAN_PERMISSION: false
     # 资源匹配路径
-    CHOERODON_RESOURCE_PATTERN: /v1/*,/hzero/*
+    HZERO_RESOURCE_PATTERN: /v1/*,/hzero/*
     # 不需要刷新权限的服务
-    CHOERODON_EUREKA_EVENT_SKIP_SERVICES: zipkin**, **gateway**, **register**, **oauth**
+    HZERO_PERMISSION_SKIP_PARSE_SERVICES: register,gateway,oauth,swagger
     # 是否自动刷新服务权限
-    CHOERODON_EUREKA_EVENT_PARSE_PERMISSION: true
+    HZERO_PERMISSION_PARSE_PERMISSION: true
     # Eureka 注册中心地址
     EUREKA_DEFAULT_ZONE: http://dev.hzero.org:8000/eureka/
     # 服务以IP地址注册
